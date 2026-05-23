@@ -1,0 +1,9 @@
+*.msi
+*.exe
+*.msi
+*.exe
+assets/img/
+# Si tienes carpetas de dependencias o compilación más adelante
+node_modules/
+bin/
+obj/

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elias & Giselle</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="bgMusic" src="assets/music/cancion.mp3" loop></audio>
+
+    <div id="main-wrapper">
+        
+        <section class="step active" id="step-1">
+            <div class="hero-content">
+                <h1 class="hero-title">Elias & Gisell</h1>
+                <p class="hero-subtitle">¡Nos vamos a Casar!</p>
+                
+                <div class="music-player">
+                    <div class="player-controls">
+                        <button class="control-btn prev">⏮</button>
+                        <button id="mainPlayBtn" class="control-btn play-pause" onclick="startInvitation()">▶</button>
+                        <button class="control-btn next">⏭</button>
+                    </div>
+                    <div class="volume-slider">
+                        <span>🔈</span>
+                        <div class="bar"></div>
+                        <span>🔊</span>
+                    </div>
+                    <p class="player-tip">Haz clic en Play para abrir la invitación</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="step" id="step-2">
+            <div class="glass-card">
+                <p class="texto-mayus">"HAY HISTORIAS QUE MERECEN UN CAPITULO ESPECIAL"</p>
+                <p class="texto-mayus"><strong>"ESTE ES EL NUESTRO"</strong></p>
+                <div class="corazon">❤️</div>
+                <div class="nav-buttons">
+                    <button class="btn-next" onclick="nextStep(3)">Continuar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="step" id="step-3">
+            <div class="glass-card">
+                <p class="sub-titulo">NOS VAMOS A CASAR GUARDA LA FECHA</p>
+                <div class="calendar-visual">
+                    <p>JULIO 2026</p>
+                    <img style="width: 100%;" src="assets/img/calendario-18.png" alt="18 de Julio"> 
+                </div>
+                <p class="falta-label">FALTA:</p>
+                <div id="countdown" class="hero-timer"></div>
+                <div class="nav-buttons">
+                    <button class="btn-back" onclick="nextStep(2)">←</button>
+                    <button class="btn-next" onclick="nextStep(4)">Siguiente</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="step" id="step-4">
+            <div class="glass-card">
+                <p class="texto-cuerpo">Queremos que nos acompañes en nuestro ...
+                </p>
+                <div class="si-acepto-box">
+                    <img src="assets/img/foto3.jpg" class="foto-si" alt="Si, acepto">
+                    <h3>SI, ACEPTO</h3>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn-back" onclick="nextStep(3)">←</button>
+                    <button class="btn-next" onclick="nextStep(5)">Versículo</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="step" id="step-5">
+            <div class="glass-card">
+                <p class="versiculo">"Mejor son dos que uno, porque obtienen más fruto de su esfuerzo. Si uno cae, el otro lo levanta. ¡Ay de aquel que cae y no tiene quien lo levante!"</p>
+                <p class="cita">Eclesiastés 4:9-10</p>
+                <div class="nav-buttons">
+                    <button class="btn-back" onclick="nextStep(4)">←</button>
+                    <button class="btn-next" onclick="nextStep(6)">Nuestra Historia</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="step" id="step-6">
+            <div class="glass-card">
+                <h2 class="titulo-script">Nuestra Historia</h2>
+                <p class="texto-cuerpo">Hace 5 años, Dios en su infinita gracia cruzó nuestros caminos para empezar esta aventura juntos...</p>
+                <div class="nav-buttons">
+                    <button class="btn-back" onclick="nextStep(5)">←</button>
+                    <button class="btn-next" onclick="nextStep(7)">Galería</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="step" id="step-7">
+            <div class="glass-card gallery-container">
+                <h2 class="titulo-script">Nuestros Momentos</h2>
+                <p class="instruccion">(Toca las fotos para ampliarlas)</p>
+                <div class="grid-5-fotos">
+                    <div class="foto-principal-wrapper">
+                        <img src="assets/img/foto1.jpg" onclick="openPopup(this.src)" class="foto-item principal">
+                    </div>
+                    <img src="assets/img/foto2.jpg" onclick="openPopup(this.src)" class="foto-item">
+                    <img src="assets/img/foto4.jpg" onclick="openPopup(this.src)" class="foto-item">
+                    <img src="assets/img/foto5.jpg" onclick="openPopup(this.src)" class="foto-item">
+                    <img src="assets/img/foto6.jpg" onclick="openPopup(this.src)" class="foto-item">
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn-back" onclick="nextStep(6)">←</button>
+                    <button class="btn-next" onclick="nextStep(8)">Ubicación</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="step" id="step-8">
+            <div class="glass-card">
+                <h2 class="titulo-script">Ceremonia y Recepción</h2>
+                <p class="texto-cuerpo"><strong>Lugar:</strong> Hacienda La Eternidad, Latacunga</p>
+                <p class="texto-cuerpo"><strong>Hora:</strong> 16:00 PM</p>
+                <div class="nav-buttons-extra">
+                    <a href="https://maps.app.goo.gl/GHNDSt6sTfWayynz7" target="_blank" class="btn-maps">Ver Ubicación en Maps</a>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn-back" onclick="nextStep(7)">←</button>
+                    <button class="btn-next" onclick="nextStep(9)">Vestimenta</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="step" id="step-9">
+            <div class="glass-card">
+                <h2 class="titulo-script">Código de Vestimenta</h2>
+                <p class="dress-code-msg">Se reserva color blanco y gris claro para los novios</p>
+                <img style="height: 50%; width: auto;" src="assets/img/CodigoVest.jpg" class="img-vest" alt="Dress Code">
+                <div class="nav-buttons">
+                    <button class="btn-back" onclick="nextStep(8)">←</button>
+                    <button class="btn-next" onclick="nextStep(10)">Confirmar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="step" id="step-10">
+            <div class="glass-card">
+                <h2 class="titulo-script">Confirmación</h2>
+                <p class="texto-cuerpo">Tu presencia es una bendición.</p>
+                <a href="https://wa.me/593998884799?text=¡Hola!+Confirmo+mi+asistencia+a+la+boda+de+Elias+y+Gisell" class="btn-wa">
+                    Confirmar por WhatsApp
+                </a>
+                <div class="nav-buttons">
+                    <button class="btn-back" onclick="nextStep(1)">← Volver al inicio</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="image-popup" class="popup-overlay" onclick="closePopup()">
+            <span class="popup-close">×</span>
+            <img class="popup-content" id="popup-img">
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
